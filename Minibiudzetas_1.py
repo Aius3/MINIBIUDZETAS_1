@@ -14,8 +14,14 @@ while True:
     pagr_meniu_pasirinkimas = input("> ")
 
     if pagr_meniu_pasirinkimas == "1":
-        paj_data = input("Įveskite datą: ")
-        paj_pav = input("Įveskite pajamų pavadinimą: ")
-        paj_suma = input("Įveskite pajamų sumą: ")
-        pajamos.append([paj_data, paj_pav, paj_suma])
+        data = input("Įveskite datą: ")
+        pav = input("Įveskite pajamų pavadinimą: ")
+        suma = input("Įveskite pajamų sumą: ")
+        pajamos.append([data, pav, suma])
+
+    if pagr_meniu_pasirinkimas == "2":
+        data = input("Įveskite datą: ")
+        pav = input("Įveskite išlaidų pavadinimą: ")
+        suma = input("Įveskite išlaidų sumą: ")
+        islaidos.append([data, pav, suma])
 
