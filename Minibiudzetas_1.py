@@ -16,6 +16,7 @@ while True:
           "4. Atspausdinti išlaidų eilutes\n"
           "5. Atspausdinti statistiką\n"
           "6. Trinti duomenis\n"
+          "7. Duomenų paieška\n"
           "q - išeiti\n")
     pagr_meniu_pasirinkimas = input("> ")
 
@@ -67,6 +68,16 @@ while True:
 
         if trinimo_meniu_pasirinkimas == "2":
             trinimas(islaidos)
+
+    if pagr_meniu_pasirinkimas == "7":
+
+        iesko = input("Įveskite ieškomą pajamų arba išlaidų šaltinį: ")
+        for elem in pajamos:
+            if elem[1] == iesko:
+                print(f"rasti pajamų duomenys:\n {elem}")
+        for elem in islaidos:
+            if elem[1] == iesko:
+                print(f"rasti išlaidų duomenys:\n {elem}")
 
     if pagr_meniu_pasirinkimas == "q":
         break

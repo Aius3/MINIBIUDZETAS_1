@@ -52,3 +52,5 @@ def trinimas(tipas):
         del tipas[int(trint) - 1]
     else:
         print("Sąrašas tuščias!")
+
+
