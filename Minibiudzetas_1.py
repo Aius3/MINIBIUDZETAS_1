@@ -1,8 +1,12 @@
 from datetime import datetime
 from os import remove
 from turtledemo.penrose import start
-
+import logging
 from funkcijos import sumavimas, vidurkis, didziausias, maziausias, trinimas
+
+logging.basicConfig(level=logging.INFO,
+                    filename="zurnalas.log",
+                    format="%(asctime)s %(levelname)s %(message)s")
 
 pajamos = []
 islaidos = []
@@ -57,6 +61,8 @@ while True:
 
     if pagr_meniu_pasirinkimas == "6":
 
+        logging.warning("Trinami failai negali buti atkurti!")
+
         print("Pasirinkite iš kurio sarašo norite ištrinti: \n"
               "1. Pajamos\n"
               "2. Išlaidos\n")
@@ -70,6 +76,8 @@ while True:
             trinimas(islaidos)
 
     if pagr_meniu_pasirinkimas == "7":
+
+        logging.info("Duomenys ieskomi is pajamu ir islaidu saraso")
 
         iesko = input("Įveskite ieškomą pajamų arba išlaidų šaltinį: ")
         for elem in pajamos:
