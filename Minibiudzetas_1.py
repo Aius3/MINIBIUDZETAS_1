@@ -1,4 +1,5 @@
 from datetime import datetime
+from funkcijos import sumavimas, vidurkis, didziausias, maziausias
 
 pajamos = []
 islaidos = []
@@ -35,3 +36,19 @@ while True:
             print("Išlaidos:")
             print(elem)
 
+    if pagr_meniu_pasirinkimas == "5":
+
+        print(f"Visų pajamų šaltinių suma: {sumavimas(pajamos)}")
+        print(f"Visų pajamų šaltinių vidurkis: {vidurkis(pajamos)}")
+        print(f"Didžiausias pajamų šaltinis: {didziausias(pajamos)}")
+        print(f"Mažaiausias pajamų šaltinis: {maziausias(pajamos)}")
+
+        print(f"Visų išlaidų šaltinių suma: {sumavimas(islaidos)}")
+        print(f"Visų pajamų šaltinių vidurkis: {vidurkis(islaidos)}")
+        print(f"Didžiausias išlaidų šaltinis: {didziausias(islaidos)}")
+        print(f"Mažaiausias išlaidų šaltinis: {maziausias(islaidos)}")
+
+        print(f"Likusi pajamų suma atėmus išlaidas: {sumavimas(pajamos)-sumavimas(islaidos)}")
+
+    if pagr_meniu_pasirinkimas == "q":
+        break
