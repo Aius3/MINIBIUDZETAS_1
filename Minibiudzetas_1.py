@@ -1,16 +1,21 @@
 from datetime import datetime
-from funkcijos import sumavimas, vidurkis, didziausias, maziausias
+from os import remove
+from turtledemo.penrose import start
+
+from funkcijos import sumavimas, vidurkis, didziausias, maziausias, trinimas
 
 pajamos = []
 islaidos = []
 
 while True:
-    print("Pagrindinis meniu: \n"
+    print("--------------------\n"
+          "Pagrindinis meniu: \n"
           "1. Įvesti pajamas\n"
           "2. Įvesti išlaidas\n"
           "3. Atspausdinti pajamų eilutes\n"
           "4. Atspausdinti išlaidų eilutes\n"
           "5. Atspausdinti statistiką\n"
+          "6. Trinti duomenis\n"
           "q - išeiti\n")
     pagr_meniu_pasirinkimas = input("> ")
 
@@ -27,17 +32,16 @@ while True:
         islaidos.append([data, pav, suma])
 
     if pagr_meniu_pasirinkimas == "3":
+        print("Pajamos:")
         for elem in pajamos:
-            print("Pajamos:")
             print(elem)
 
     if pagr_meniu_pasirinkimas == "4":
+        print("Išlaidos:")
         for elem in islaidos:
-            print("Išlaidos:")
             print(elem)
 
     if pagr_meniu_pasirinkimas == "5":
-
         print(f"Visų pajamų šaltinių suma: {sumavimas(pajamos)}")
         print(f"Visų pajamų šaltinių vidurkis: {vidurkis(pajamos)}")
         print(f"Didžiausias pajamų šaltinis: {didziausias(pajamos)}")
@@ -48,7 +52,21 @@ while True:
         print(f"Didžiausias išlaidų šaltinis: {didziausias(islaidos)}")
         print(f"Mažaiausias išlaidų šaltinis: {maziausias(islaidos)}")
 
-        print(f"Likusi pajamų suma atėmus išlaidas: {sumavimas(pajamos)-sumavimas(islaidos)}")
+        print(f"Likusi pajamų suma atėmus išlaidas: {sumavimas(pajamos) - sumavimas(islaidos)}")
+
+    if pagr_meniu_pasirinkimas == "6":
+
+        print("Pasirinkite iš kurio sarašo norite ištrinti: \n"
+              "1. Pajamos\n"
+              "2. Išlaidos\n")
+
+        trinimo_meniu_pasirinkimas = input("> ")
+
+        if trinimo_meniu_pasirinkimas == "1":
+            trinimas(pajamos)
+
+        if trinimo_meniu_pasirinkimas == "2":
+            trinimas(islaidos)
 
     if pagr_meniu_pasirinkimas == "q":
         break

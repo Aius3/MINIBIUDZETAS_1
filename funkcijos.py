@@ -41,3 +41,14 @@ def maziausias(tipas):
         return f"{maz_pav} - {maz}"
     else:
         return 0
+
+
+def trinimas(tipas):
+    print("Pasirinkite kurį sąrašą trinti: ")
+    for num, elem in enumerate(tipas, start=1):
+        print(f"{num}. {elem}")
+    if tipas:
+        trint = input("> ")
+        del tipas[int(trint) - 1]
+    else:
+        print("Sąrašas tuščias!")
