@@ -1,6 +1,4 @@
-from datetime import datetime
-from os import remove
-from turtledemo.penrose import start
+import pickle
 import logging
 from funkcijos import sumavimas, vidurkis, didziausias, maziausias, trinimas
 
@@ -21,6 +19,7 @@ while True:
           "5. Atspausdinti statistiką\n"
           "6. Trinti duomenis\n"
           "7. Duomenų paieška\n"
+          "8. Saugoti duomenis į failą\n"
           "q - išeiti\n")
     pagr_meniu_pasirinkimas = input("> ")
 
@@ -86,6 +85,13 @@ while True:
         for elem in islaidos:
             if elem[1] == iesko:
                 print(f"rasti išlaidų duomenys:\n {elem}")
+
+    if pagr_meniu_pasirinkimas == "8":
+        with open("saug_duom.pickle", mode="wb") as file:
+            #  noinspection PyTypeChecker
+            pickle.dump(pajamos, file)
+            #  noinspection PyTypeChecker
+            pickle.dump(islaidos, file)
 
     if pagr_meniu_pasirinkimas == "q":
         break
