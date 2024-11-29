@@ -25,3 +25,13 @@ while True:
         suma = input("Įveskite išlaidų sumą: ")
         islaidos.append([data, pav, suma])
 
+    if pagr_meniu_pasirinkimas == "3":
+        for elem in pajamos:
+            print("Pajamos:")
+            print(elem)
+
+    if pagr_meniu_pasirinkimas == "4":
+        for elem in islaidos:
+            print("Išlaidos:")
+            print(elem)
+
